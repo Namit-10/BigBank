@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+:root{
+  --main-bg:#0096FF;
+}
+
+.main-bg {
+  background: var(--main-bg) !important;
+}
+
+input:focus, button:focus {
+  border: 1px solid var(--main-bg) !important;
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--main-bg) !important;
+  border-color: var(--main-bg) !important;
+}
+
+.card, .btn, input{
+  padding: 10px;
+  border-radius:15px !important;
+}
+
+.container {
+	margin-top: 12%;
+}
