@@ -343,7 +343,7 @@ public class BankDao {
 	
 	public static int isCardApplicationPending(String accountNo) throws SQLException {
 		Statement stmt = Util.getConnection().createStatement();
-		String sql = "select * from cardApplication where accountNo = "+accountNo+" and applicationStatus = 'PENDING' ";
+		String sql = "select * from cardApplication where accountNo = '"+accountNo+"' and applicationStatus = 'PENDING' ";
 		ResultSet rs = stmt.executeQuery(sql);
 		if(rs.next()) {
 			return 1;

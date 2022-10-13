@@ -174,6 +174,9 @@ function Toggle() {
 </div>
 <% }
 
+else if(BankDao.isCardApplicationPending(accountNo) == 1){
+	response.sendRedirect("pendingCardApplication.jsp");
+}
 else {
 	response.sendRedirect("applyForCard.jsp");
 }%>

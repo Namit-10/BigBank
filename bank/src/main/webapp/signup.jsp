@@ -102,6 +102,36 @@
 		function checkUsername() {
 			
 		}
+		
+		function selectStateCountryPincodeByCity(x) {
+			  alert("Function called");
+			  if(x === "Bengaluru"){
+				  document.getElementById("State").innerText = "Karnataka";
+				  document.getElementById("pincode").innerText = 560001;
+			  }
+			  else if(x === "Chennai"){
+				  document.getElementById("State").value = "Tamil Nadu";
+				  document.getElementById("pincode").value = 600001;
+			  }
+			  else if(x === "Delhi"){
+				  document.getElementById("State").value = "Delhi";
+				  document.getElementById("pincode").value = 110001;
+			  }
+			  else if(x === "Mumbai"){
+				  document.getElementById("State").value = "Maharashtra";
+				  document.getElementById("pincode").value = 400001;
+			  }
+			  else if(x === "Kolkata"){
+				  document.getElementById("State").value = "West Bengal";
+				  document.getElementById("pincode").value = 700001;
+			  }
+			  else if(x === "Hyderabad"){
+				  document.getElementById("State").value = "Telangana";
+				  document.getElementById("pincode").value = 500001;
+			  }
+			  
+			  document.getElementById("country").innerHTML.value = "India";
+			}
 	</script>
 	<style>
 		body{
@@ -175,17 +205,39 @@
     <input type="textarea" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
   </div>
   
-  <div class="col-md-6">
+  <!-- <div class="col-md-6">
     <label for="city" class="form-label">City</label>
-    <input type="text" class="form-control" id="city" name="city" required>
+    <select name="city" id="city">
+    <option value="Bengaluru" selected>Bengaluru</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="Mumbai">Mumbai</option>
+    </select>
+  </div> -->
+  
+  <div class="input-group col-md-6">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="city">City</label>
   </div>
+  <select class="custom-select" name="city" id="city" >
+    <option value="Bengaluru" onclick="selectStateCountryPincodeByCity('Bengaluru')">Bengaluru</option>
+    <option value="Chennai" onclick="selectStateCountryPincodeByCity(this.value)">Chennai</option>
+    <option value="Delhi" onclick="selectStateCountryPincodeByCity(this.value)">Delhi</option>
+    <option value="Hyderabad" onclick="selectStateCountryPincodeByCity(this.value)">Hyderabad</option>
+    <option value="Kolkata" onclick="selectStateCountryPincodeByCity(this.value)">Kolkata</option>
+    <option value="Mumbai" onclick="selectStateCountryPincodeByCity(this.value)">Mumbai</option>
+  </select>
+</div>
+
   <div class="col-md-6">
     <label for="inputState" class="form-label">State</label>
     <input type="text" class="form-control" id="state" name="state" required>
   </div>
   <div class="col-md-6">
     <label for="pincode" class="form-label">Pincode</label>
-    <input type="number" class="form-control" id="pincode" name="pincode" min=0 max=999999 required>
+    <input type="number" class="form-control" id="pincode" name="pincode" min=0 maxlength="6" required>
   </div>
   
   <div class="col-md-6">
@@ -197,12 +249,12 @@
   
   <div class="col-12">
     <label for="panNo" class="form-label">PAN Number<br><span><small>Enter a 10 digit valid PAN number Example: ABCDG9782K</small></span></label>
-    <input type="text" class="form-control" id="panNo" name="panNo" pattern="^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]$" required>
+    <input type="text" class="form-control" id="panNo" name="panNo" pattern="^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required>
   </div>
   
   <div class="col-12">
     <label for="aadharNo" class="form-label">Aadhar Number<br><span><small>Enter a 12 digit valid aadhar number</small></span></label>
-    <input type="text" class="form-control" id="aadharNo" name="aadharNo" pattern="^[0-9]{12}$" required>
+    <input type="text" class="form-control" id="aadharNo" name="aadharNo" pattern="^[0-9]{12}$" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12" required>
   </div>
   
   <div class="col-md-12 dropdown-divider" style="margin-top: 20px; margin-bottom: 20px;"></div>

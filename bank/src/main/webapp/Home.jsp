@@ -49,7 +49,7 @@ body {
 <li><a href="transfer.jsp" class="nav-link">Fund Transfer</a></li>
 <li><a href="showTransactions.jsp" class="nav-link">Show Transactions</a></li>
 <li><a href="balanceCheck.jsp" class="nav-link">Check Balance</a></li>
-<li><a href="DecideCard" class="nav-link">Debit Card</a></li>
+<li><a href="card.jsp" class="nav-link">Debit Card</a></li>
 <li><a href="Logout" class="nav-link">Logout</a></li>
 </ul>
 </nav>
